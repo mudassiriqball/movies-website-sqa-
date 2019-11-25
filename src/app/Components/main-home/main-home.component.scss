@@ -1,0 +1,231 @@
+    .carousel-caption {
+        // display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        position: absolute;
+        top: 50%;
+        bottom: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+    
+    input.search {
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        color: white;
+    }
+    
+    .button_group {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+    
+    .btn {
+        font-size: 10px;
+        background: #92bcdf;
+        color: black;
+        border-radius: 10px;
+    }
+    
+    .btn:hover {
+        background: #3f729b;
+        color: white;
+    }
+    
+    //@at-root
+    //@at-root
+    .main_title {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        font-size: 24px;
+        background: #3f729b;
+        color: white;
+        margin: 20px 10px 0 10px;
+        padding: 5px 0px;
+    }
+    
+    // Movies List Styles
+    mdb-card {
+        margin: 5px;
+        width: 100%;
+    }
+    
+    .image {
+        height: 350px;
+        width: 100%;
+    }
+    
+    .card_div {
+        padding: 0%;
+        margin: 0%;
+    }
+    
+    .row {
+        // padding: 0px 5px 0px 5px;
+        padding: 0;
+        margin: 0%;
+    }
+    
+    .textWrap {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 16px;
+        max-height: 32px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+    
+    .title {
+        padding: 0;
+        margin: 0;
+        text-align: start;
+        font-weight: bolder;
+    }
+    
+    .title {
+        padding: 10px 10px 0px 10px;
+    }
+    
+    mdb-card-text {
+        padding: 0px 10px 0px 10px;
+    }
+    
+    .textWrap {
+        margin: 0px 10px 10px 10px;
+    }
+    
+    // Progress bar 
+    // Progress Bar
+    .containerr {
+        position: relative;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .containerr .cardd {
+        position: relative;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        border-radius: 4px;
+        text-align: center;
+        overflow: hidden;
+        transition: 0.5s;
+    }
+    
+    .containerr .cardd:hover {
+        transform: translateY(-10px);
+    }
+    
+    .containerr .cardd:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+    }
+    
+    .percent {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background: transparent;
+        z-index: 1000;
+    }
+    
+    .percent .number {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+    }
+    
+    .percent .number h2 {
+        color: rgb(163, 161, 161);
+        margin-top: 5px;
+        font-size: 12px;
+        transition: 0.5s;
+    }
+    
+    .cardd:hover .percent .number h2 {
+        color: #000000;
+        font-size: 16px;
+    }
+    
+    .percent .number h2 span {
+        font-size: 8px;
+        color: rgb(163, 161, 161);
+        transition: 0.5s;
+    }
+    
+    .cardd:hover .percent .number h2 span {
+        color: rgb(0, 0, 0);
+        font-size: 12px;
+    }
+    
+    .textt {
+        position: relative;
+        color: #777;
+        font-size: 10px;
+        transition: 0.5s;
+        margin: 0px;
+    }
+    
+    .cardd:hover .textt {
+        color: #000;
+        font-weight: bolder;
+    }
+    
+    svg {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        z-index: 1000;
+    }
+    
+    svg circle {
+        width: auto;
+        height: auto;
+        fill: none;
+        stroke: rgb(238, 230, 230);
+        stroke-width: 3;
+        stroke-linecap: round;
+        transform: translate(5px, 5px);
+    }
+    
+    svg circle:nth-child(2) {
+        stroke-dasharray: 440;
+        stroke-dashoffset: 440;
+    }
+    
+    .cardd:nth-child(1) svg circle:nth-child(2) {
+        stroke-dashoffset: calc(440 - (123 * 40) / 100);
+        stroke: #2020db;
+    }
+    
+    .cardd:nth-child(2) svg circle:nth-child(2) {
+        stroke-dashoffset: calc(440 - (123 * 60) / 100);
+        stroke: #b3d613;
+    }
+    
+    .cardd:nth-child(3) svg circle:nth-child(2) {
+        stroke-dashoffset: calc(440 - (123 * 90) / 100);
+        stroke: #12aa6b;
+    }

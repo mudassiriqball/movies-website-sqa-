@@ -1,0 +1,14 @@
+<!-- header -->
+<app-header></app-header>
+
+<main>
+    <app-main-home *ngIf="flag == 1"></app-main-home>
+    <div class="container-fluid">
+        <app-movies-list *ngIf="flag == 2"></app-movies-list>
+        <app-movie-details *ngIf="flag == 4"></app-movie-details>
+    </div>
+    <app-loading-list *ngIf="flag == 3"></app-loading-list>
+</main>
+
+<!-- footer -->
+<app-footer></app-footer>
