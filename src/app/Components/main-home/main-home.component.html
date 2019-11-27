@@ -1,22 +1,27 @@
 <mdb-carousel *ngIf="flag == null" class="carousel-fade" [animation]="'fade'">
     <mdb-carousel-item *ngFor="let item of img_collection">
         <div class="view w-100">
-            <img class="d-block w-100" style="max-height: 700px;" src="http://image.tmdb.org/t/p/w500{{item.backdrop_path}}" alt="First slide">
+            <img class="d-block w-100" style="max-height: 700px;"
+                src="http://image.tmdb.org/t/p/w500{{item.backdrop_path}}" alt="First slide">
         </div>
 
         <!-- (input)="onSearchChange($event.target.value)" -->
         <!-- Search form -->
         <div class="carousel-caption">
             <div class="input-group md-form form-sm form-2 pl-0">
-                <input class="form-control my-0 py-1 search" [(ngModel)]="searchTerm" type="text" (change)="onSearchAll()" placeholder="Search" aria-label="Search">
+                <input class="form-control my-0 py-1 search" [(ngModel)]="searchTerm" type="text"
+                    (change)="onSearchAll()" placeholder="Search" aria-label="Search">
                 <!-- <div class="input-group-append search">
                     <span class="input-group-text lighten-3" (click)="onSearchChange()" id="basic-text1"><i class="fas fa-search text-grey" aria-hidden="true"></i></span>
                 </div> -->
             </div>
             <div class="btn-group button_group md-form form-sm form-2 pl-0" role="group" aria-label="Basic example">
-                <button mdbBtn type="button" (click)="onSearchMovies()" class="waves-light btn" mdbWavesEffect>Movies</button>
-                <button mdbBtn type="button" (click)="onSearchTvs()" class="waves-light btn" mdbWavesEffect>Tv_Shows</button>
-                <button mdbBtn type="button" (click)="onSearchPeople()" class="waves-light btn" mdbWavesEffect>People</button>
+                <button mdbBtn type="button" (click)="onSearchMovies()" class="waves-light btn"
+                    mdbWavesEffect>Movies</button>
+                <button mdbBtn type="button" (click)="onSearchTvs()" class="waves-light btn"
+                    mdbWavesEffect>Tv_Shows</button>
+                <button mdbBtn type="button" (click)="onSearchPeople()" class="waves-light btn"
+                    mdbWavesEffect>People</button>
                 <button mdbBtn type="button" (click)="onSearchAll()" class="waves-light btn" mdbWavesEffect>All</button>
             </div>
         </div>
@@ -25,8 +30,9 @@
 <div *ngIf="flag == 'show_movies'">
     <mdb-card-title class="main_title">Movies</mdb-card-title>
     <div class="row">
-        <div *ngFor="let item of movie_collection" class="col-lg-2 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
-            <mdb-card *ngIf="!genre_show" (click)="showDetails(item)">
+        <div *ngFor="let item of movie_collection"
+            class="col-lg-2 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
+            <mdb-card (click)="showDetails(item)">
                 <img class="image" src="http://image.tmdb.org/t/p/w500{{item.poster_path}}" alt="abc ">
                 <mdb-card-body style="padding: 0%;margin: 0%; ">
                     <div class="containerr">
@@ -34,8 +40,8 @@
                             <div class="box">
                                 <div class="percent">
                                     <svg>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                    <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
                                     </svg>
                                     <div class="number">
                                         <h2>90<span>%</span></h2>
@@ -48,9 +54,9 @@
                             <div class="box">
                                 <div class="percent">
                                     <svg>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                 </svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
                                     <div class="number">
                                         <h2>90<span>%</span></h2>
                                     </div>
@@ -61,10 +67,10 @@
                         <div class="cardd">
                             <div class="box">
                                 <div class="percent">
-                                    <svg> 
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                </svg>
+                                    <svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
                                     <div class="number">
                                         <h2>90<span>%</span></h2>
                                     </div>
@@ -85,8 +91,9 @@
 <div *ngIf="flag == 'show_tvShows'">
     <mdb-card-title class="main_title">TV Shows</mdb-card-title>
     <div class="row" style="padding-bottom: 100px;">
-        <div *ngFor="let item of tvShow_collection" class="col-lg-2 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
-            <mdb-card *ngIf="!genre_show" (click)="showDetails(item)">
+        <div *ngFor="let item of tvShow_collection"
+            class="col-lg-2 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
+            <mdb-card (click)="showDetails(item)">
                 <div class="image">
                     <mdb-card-img src="http://image.tmdb.org/t/p/w500{{item.poster_path}}" alt="abc "></mdb-card-img>
                 </div>
@@ -96,8 +103,8 @@
                             <div class="box">
                                 <div class="percent">
                                     <svg>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                    <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
                                     </svg>
                                     <div class="number">
                                         <h2>90<span>%</span></h2>
@@ -110,9 +117,9 @@
                             <div class="box">
                                 <div class="percent">
                                     <svg>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                 </svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
                                     <div class="number">
                                         <h2>90<span>%</span></h2>
                                     </div>
@@ -123,10 +130,10 @@
                         <div class="cardd">
                             <div class="box">
                                 <div class="percent">
-                                    <svg> 
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                    <circle cx="20" cy="20" r="20"></circle>
-                                </svg>
+                                    <svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
                                     <div class="number">
                                         <h2>90<span>%</span></h2>
                                     </div>

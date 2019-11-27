@@ -40,30 +40,30 @@ export class MoviesListComponent implements OnInit {
         }
       });
     }
-    else if (this.moviesService.current_list == 'moviesGenres') {
-      this.moviesService.getMoviesGenres().subscribe(res => {
-        if (res.results != null) {
-          this.collection = res.results;
-          this.next_prev = 0;
-          this.updateCurrentPage();
-          this.genre_show = true;
-        } else {
-          this.data_found_alert = true;
-        }
-      });
-    }
-    else if (this.moviesService.current_list == 'tvsGenres') {
-      this.moviesService.getTvShowGenres().subscribe(res => {
-        if (res.results != null) {
-          this.collection = res.results;
-          this.next_prev = 0;
-          this.updateCurrentPage();
-          this.genre_show = true;
-        } else {
-          this.data_found_alert = true;
-        }
-      });
-    }
+    // else if (this.moviesService.current_list == 'moviesGenres') {
+    //   this.moviesService.getMoviesGenres().subscribe(res => {
+    //     if (res.results != null) {
+    //       this.collection = res.results;
+    //       this.next_prev = 0;
+    //       this.updateCurrentPage();
+    //       this.genre_show = true;
+    //     } else {
+    //       this.data_found_alert = true;
+    //     }
+    //   });
+    // }
+    // else if (this.moviesService.current_list == 'tvsGenres') {
+    //   this.moviesService.getTvShowGenres().subscribe(res => {
+    //     if (res.results != null) {
+    //       this.collection = res.results;
+    //       this.next_prev = 0;
+    //       this.updateCurrentPage();
+    //       this.genre_show = true;
+    //     } else {
+    //       this.data_found_alert = true;
+    //     }
+    //   });
+    // }
     else if (this.moviesService.current_list == 'latestMovies') {
       this.moviesService.getLatestMovies(page_No).subscribe(res => {
         if (res.results != null) {

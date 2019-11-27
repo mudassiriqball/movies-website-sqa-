@@ -12,68 +12,52 @@
         <!-- Links -->
         <ul class="navbar-nav mr-auto">
             <li class="nav-item spacer">
-                <a class="nav-link" mdbWavesEffect (click)="linkClick('allMovies')">Home<span class="sr-only">(current)</span></a>
+                <a class="nav-link" mdbWavesEffect (click)="linkClick('home')">Home<span
+                        class="sr-only">(current)</span></a>
             </li>
 
+            <!-- Genres -->
             <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>Genres<span class="caret"></span></a>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                    mdbWavesEffect>Genres<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('moviesGenres')">Movies Genres </a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('tvsGenres')"> Tvs Genres</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('movieGenres')">Movies
+                        Genres </a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('tvShowGenres')"> Tvs
+                        Genres</a>
                 </div>
             </li>
-            <!-- Genres Movies Dropdown -->
-            <!-- <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button" (click)="onGenresClick('moviesGenre')" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>Movies Genres<span class="caret"></span></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu">
-                    <div *ngIf="genres != null" class="force-scroll">
-                        <div *ngFor="let item of genres">
-                            <a class="dropdown-item " mdbWavesEffect (click)="linkClick('item.name')">{{item.name}}</a>
-                        </div>
-                    </div>
-                    <div *ngIf="genres == null">
-                        <a class="dropdown-item " mdbWavesEffect>Connection error</a>
-                    </div>
-                </div>
-            </li> -->
-
-            <!-- Genres Tvs  Dropdown -->
-            <!-- <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button" (click)="onGenresClick('tvsGenre')" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>TVs Genres<span class="caret"></span></a>
-                <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu">
-                    <div *ngIf="genres != null" class="force-scroll">
-                        <div *ngFor="let item of genres">
-                            <a class="dropdown-item " mdbWavesEffect (click)="linkClick('item.name')">{{item.name}}</a>
-                        </div>
-                    </div>
-                    <div *ngIf="genres == null">
-                        <a class="dropdown-item " mdbWavesEffect>Connection error</a>
-                    </div>
-                </div>
-            </li> -->
 
             <!-- Movies Dropdown -->
             <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>Movies<span class="caret"></span></a>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                    mdbWavesEffect>Movies<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('latestMovies')"> Latest</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('nowPlayingMovies')">Now Playing </a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('popularMovies')"> Popular</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('topRatedMovies')"> Top Rated </a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('upcomingMovies')"> Upcoming </a>
+                    <!-- <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('latestMovies')"> Latest</a> -->
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('nowPlayingMovies')">Now
+                        Playing </a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('popularMovies')">
+                        Popular</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('topRatedMovies')"> Top Rated
+                    </a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('upcomingMovies')"> Upcoming
+                    </a>
                 </div>
             </li>
 
             <!-- TV Shows Dropdown -->
             <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>TV Shows<span class="caret"></span></a>
+                <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
+                    mdbWavesEffect>TV Shows<span class="caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu">
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('latestTVShows')">Latest</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('tvAiringToday')">TV Airing</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('tvOnTheAir')">On The Air</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('popularTVShows')">Popular</a>
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('topRatedTVShows')">Top Rated</a>
-
+                    <a class="dropdown-item waves-light" mdbWavesEffect
+                        (click)="linkClick('popularTVShows')">Popular</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('topRatedTVShows')">Top
+                        Rated</a>
+                    <!-- <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('latestTVShows')">Latest</a> -->
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('airingToday')">TV
+                        Airing</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('onTheAir')">On The Air</a>
                     <!-- <div class="divider dropdown-divider">
                     </div> -->
                 </div>
@@ -81,16 +65,19 @@
 
             <!-- People Dropdown -->
             <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button " class="nav-link dropdown-toggle waves-light " mdbWavesEffect>People<span class="caret "></span></a>
+                <a dropdownToggle mdbWavesEffect type="button " class="nav-link dropdown-toggle waves-light "
+                    mdbWavesEffect>People<span class="caret "></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu ">
-                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('latestPeople')">Latest People</a>
+                    <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('latestPeople')">Latest
+                        People</a>
                     <a class="dropdown-item waves-light" (click)="linkClick('popularPeople')">Popular People</a>
                 </div>
             </li>
 
             <!-- Discover Dropdown -->
             <li class="nav-item dropdown spacer" dropdown>
-                <a dropdownToggle mdbWavesEffect type="button " class="nav-link dropdown-toggle waves-light " mdbWavesEffect>Discover<span class="caret "></span></a>
+                <a dropdownToggle mdbWavesEffect type="button " class="nav-link dropdown-toggle waves-light "
+                    mdbWavesEffect>Discover<span class="caret "></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu ">
                     <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('discoverMovies')">Movies</a>
                     <a class="dropdown-item waves-light" (click)="linkClick('discoverTVShows')">TV Shows</a>

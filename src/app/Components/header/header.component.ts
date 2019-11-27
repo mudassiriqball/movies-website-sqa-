@@ -15,20 +15,6 @@ export class HeaderComponent {
   
   //Home
   linkClick(link_name) {
-    if (link_name == 'MMovies') {
-      this.appComponent.flag = 3;
-      this.moviesService.getAllMovies('1').subscribe(res => {
-        res.results;
-        this.appComponent.flag = 1;
-      });
-
-    } else {
-      this.moviesService.current_list = link_name;
-      this.appComponent.flag = 3;
-      this.moviesService.getAllMovies('1').subscribe(res => {
-        res.results;
-        this.appComponent.flag = 2;
-      });
-    }
+      this.appComponent.flag = link_name;
   }
 }

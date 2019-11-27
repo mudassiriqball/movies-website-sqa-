@@ -50,7 +50,7 @@ export class MoviesService {
   }
 
   // Genres
-  getMoviesGenres() {
+  getMovieGenres() {
     return this.http.get('https://api.themoviedb.org/3/genre/movie/list?api_key=' + this.apiKey +
       '&language=en-US').pipe(
         map(

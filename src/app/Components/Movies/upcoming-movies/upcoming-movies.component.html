@@ -1,0 +1,115 @@
+<!-- Search Bar -->
+<div *ngIf="!data_found_alert" class="input-group md-form form-sm form-2 pl-0">
+    <input class="form-control my-0 py-1 search" (change)="setFilteredItems()" type="text" placeholder="Search"
+        aria-label="Search">
+    <div class="input-group-append">
+        <span class="input-group-text lighten-3" (click)="setFilteredItems()" id="basic-text1"><i
+                class="fas fa-search text-white" aria-hidden="true"></i></span>
+    </div>
+</div>
+<!-- End Search Bar -->
+
+<app-loading-list *ngIf="loading && !data_found_alert"></app-loading-list>
+<!-- NO Data Found Message -->
+<div *ngIf="data_found_alert" class="no_data_found">
+    <h3>Oops! No Data Found.</h3>
+    <p>There may be error with database.</p>
+    <p>Or check your internet connection.</p>
+</div>
+<!-- End NO Data Found Message -->
+
+<div *ngIf="!loading && !data_found_alert">
+    <!-- Pagination -->
+    <nav *ngIf="!data_found_alert" aria-label="Page navigation">
+        <ul class="pagination pagination-circle pg-blue justify-content-center">
+            <li class="page-item">
+                <a (click)="onFirstPageClick(1)" class="page-link" mdbWavesEffect>First</a>
+            </li>
+            <li class="page-item">
+                <a (click)="prevPageClick()" class="page-link" aria-label="Previous" mdbWavesEffect>
+                    <span aria-hidden="true">&laquo;</span>
+                    <span class="sr-only">Previous</span>
+                </a>
+            </li>
+            <li class="page-item">
+                <a *ngIf="currentPage != 1" class="page-link" mdbWavesEffect>...</a>
+            </li>
+            <li class="page-item active">
+                <a class="page-link" mdbWavesEffect>{{ currentPage }}</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" mdbWavesEffect>...</a>
+            </li>
+            <li class="page-item">
+                <a (click)="nextPageClick()" class="page-link" aria-label="Next" mdbWavesEffect>
+                    <span aria-hidden="true">&raquo;</span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- End Pagination -->
+
+
+    <!-- Movies List -->
+    <div class="row" style="padding-bottom: 100px;">
+        <div *ngFor="let item of collection" class="col-lg-2 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
+            <mdb-card (click)="showDetails(item)">
+                <mdb-card-img src="http://image.tmdb.org/t/p/w500{{item.poster_path}}" alt="abc "></mdb-card-img>
+                <mdb-card-body style="padding: 0%;margin: 0%; ">
+                    <div class="containerr">
+                        <div class="cardd">
+                            <div class="box">
+                                <div class="percent">
+                                    <!-- <svg [ngStyle]="'stroke-dashoffset': percent"> -->
+                                    <svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>90<span>%</span></h2>
+                                    </div>
+                                </div>
+                                <p class="textt">Rating</p>
+                            </div>
+                        </div>
+                        <div class="cardd">
+                            <div class="box">
+                                <div class="percent">
+                                    <svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>90<span>%</span></h2>
+                                    </div>
+                                </div>
+                                <p class="textt">Rating</p>
+                            </div>
+                        </div>
+                        <div class="cardd">
+                            <div class="box">
+                                <div class="percent">
+                                    <svg>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                        <circle cx="20" cy="20" r="20"></circle>
+                                    </svg>
+                                    <div class="number">
+                                        <h2>90<span>%</span></h2>
+                                    </div>
+                                </div>
+                                <p class="textt">Rating</p>
+                            </div>
+                        </div>
+                    </div>
+                </mdb-card-body>
+                <div class="title text-truncate ">{{ item.original_title }} </div>
+                <mdb-card-text class="align-text-bottom ">{{ item.release_date }} </mdb-card-text>
+                <div class="align-text-bottom textWrap ">{{ item.overview}}</div>
+            </mdb-card>
+
+
+        </div>
+    </div>
+    <!-- End Movies List -->
+</div>

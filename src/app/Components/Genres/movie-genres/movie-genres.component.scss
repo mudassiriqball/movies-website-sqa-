@@ -1,0 +1,61 @@
+.main_title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+  color: #3f729b;
+  padding: 5px 0px;
+}
+
+//no_data_found Styles
+.no_data_found {
+  margin: 15% 0px 15% 0px;
+}
+
+.no_data_found h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no_data_found p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  margin: 0px;
+}
+
+.card_div {
+  height: 200px;
+  padding: 20px 20px;
+  margin: 0px;
+}
+
+.card_div mdb-card:hover {
+  mdb-card-header {
+    text-align: center;
+    background: #3f729b;
+    color: white;
+    font-size: 28px;
+    padding: 30px;
+    width: 100%;
+  }
+}
+
+.row {
+  padding: 0px 5px 0px 5px;
+}
+
+.card_div mdb-card {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card_div mdb-card-header {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bolder;
+}

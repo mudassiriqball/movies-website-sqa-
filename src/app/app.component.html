@@ -2,10 +2,24 @@
 <app-header></app-header>
 
 <main>
-    <app-main-home *ngIf="flag == 1"></app-main-home>
+    <app-main-home *ngIf="flag == 'MMovies'"></app-main-home>
     <div class="container-fluid">
-        <app-movies-list *ngIf="flag == 2"></app-movies-list>
-        <app-movie-details *ngIf="flag == 4"></app-movie-details>
+        <!-- <app-movies-list *ngIf="flag == 'home'"></app-movies-list> -->
+        <!-- <app-home *ngIf="flag == 'home'"></app-home> -->
+        <app-now-playing-movies *ngIf="flag == 'nowPlayingMovies'"></app-now-playing-movies>
+        <app-popular-movies *ngIf="flag == 'popularMovies'"></app-popular-movies>
+        <app-top-rated-movies *ngIf="flag == 'topRatedMovies'"></app-top-rated-movies>
+        <app-upcoming-movies *ngIf="flag == 'upcomingMovies'"></app-upcoming-movies>
+
+        <app-movie-genres *ngIf="flag == 'movieGenres'"></app-movie-genres>
+        <app-tv-show-genres *ngIf="flag == 'tvShowGenres'"></app-tv-show-genres>
+
+        <app-popular-tv-shows *ngIf="flag == 'popularTVShows'"></app-popular-tv-shows>
+        <app-top-rated-tv-shows *ngIf="flag == 'topRatedTVShows'"></app-top-rated-tv-shows>
+        <app-tv-airing-tv-shows *ngIf="flag == 'airingToday'"></app-tv-airing-tv-shows>
+        <app-on-the-air-tv-shows *ngIf="flag == 'onTheAir'"></app-on-the-air-tv-shows>
+
+        <!-- <app-movie-details *ngIf="flag == 4"></app-movie-details> -->
     </div>
     <app-loading-list *ngIf="flag == 3"></app-loading-list>
 </main>

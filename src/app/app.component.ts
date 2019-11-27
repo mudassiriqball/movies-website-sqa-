@@ -8,9 +8,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   constructor() {
-    this.flag = 1;
+    this.flag = 'MMovies';
   }
-  flag: number;
+  flag: any;
 
   ngOnInit() {
   }

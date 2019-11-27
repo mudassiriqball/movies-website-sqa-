@@ -13,6 +13,18 @@ import { MoviesListComponent } from './Components/movies-list/movies-list.compon
 import { LoadingListComponent } from './Components/loading-list/loading-list.component';
 import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 
+// Movies Component
+import { NowPlayingMoviesComponent } from './Components/Movies/now-playing-movies/now-playing-movies.component';
+import { PopularMoviesComponent } from './Components/Movies/popular-movies/popular-movies.component';
+import { TopRatedMoviesComponent } from './Components/Movies/top-rated-movies/top-rated-movies.component';
+import { UpcomingMoviesComponent } from './Components/Movies/upcoming-movies/upcoming-movies.component';
+import { PopularTvShowsComponent } from './Components/TvShows/popular-tv-shows/popular-tv-shows.component';
+import { TopRatedTvShowsComponent } from './Components/TvShows/top-rated-tv-shows/top-rated-tv-shows.component';
+import { TvAiringTvShowsComponent } from './Components/TvShows/tv-airing-tv-shows/tv-airing-tv-shows.component';
+import { OnTheAirTvShowsComponent } from './Components/TvShows/on-the-air-tv-shows/on-the-air-tv-shows.component';
+import { MovieGenresComponent } from './Components/Genres/movie-genres/movie-genres.component';
+import { TvShowGenresComponent } from './Components/Genres/tv-show-genres/tv-show-genres.component';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +35,16 @@ import { MovieDetailsComponent } from './Components/movie-details/movie-details.
     MoviesListComponent,
     LoadingListComponent,
     MovieDetailsComponent,
+    NowPlayingMoviesComponent,
+    PopularMoviesComponent,
+    TopRatedMoviesComponent,
+    UpcomingMoviesComponent,
+    PopularTvShowsComponent,
+    TopRatedTvShowsComponent,
+    TvAiringTvShowsComponent,
+    OnTheAirTvShowsComponent,
+    MovieGenresComponent,
+    TvShowGenresComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,36 +1,36 @@
 .spacer {
-    margin-left: 10px;
-    margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .mmovie-link a {
-    padding: 10px 15px 10px 15px;
-    border: 2px solid white;
-    background: #3f729b;
-    border-radius: 5px;
-    color: white;
-    font-weight: bolder;
+  padding: 10px 15px 10px 15px;
+  border: 2px solid white;
+  background: #3f729b;
+  border-radius: 5px;
+  color: white;
+  font-weight: bolder;
 }
 
 .mmovie-link a:hover {
-    color: white;
-    // border-radius: 20px;
+  color: white;
+  // border-radius: 20px;
 }
 
 .move_orword a:hover {
-    background-color: #3f729b;
-    // border-radius: 20px;
-    color: white;
-    margin-left: 15px;
+  background-color: #3f729b;
+  // border-radius: 20px;
+  color: white;
+  margin-left: 15px;
 }
 
 .caret {
-    margin-left: 8px;
+  margin-left: 8px;
 }
 
 .force-scroll {
-    direction: rtl;
-    overflow: auto;
-    height: 150px;
-    width: auto;
+  direction: rtl;
+  overflow: auto;
+  height: 150px;
+  width: auto;
 }
