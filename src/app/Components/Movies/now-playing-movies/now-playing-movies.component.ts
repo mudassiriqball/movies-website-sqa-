@@ -9,36 +9,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./now-playing-movies.component.scss']
 })
 export class NowPlayingMoviesComponent implements OnInit {
-
-  searchTerm = "";
-  loading: boolean;
   collection: any;
   currentPage: any;
   next_prev: number;
-  data_found_alert: boolean;
 
   constructor(
     private moviesService: MoviesService,
     private appComponent:AppComponent
     ) {
     this.currentPage = 1;
-    this.data_found_alert = false;
-    this.loading = true;
   }
   
-
   ngOnInit() {
     this.getCollection(1);
   }
 
   getCollection(page_No) {
-      this.moviesService.getAllMovies(page_No).subscribe(res => {
+      this.moviesService.getNowPlayingMovies(page_No).subscribe(
+        res => {
         if (res.results !=  null) {
           this.collection = res.results;
           this.updateCurrentPage();
-        } else {
-          this.loading = false;
-          this.data_found_alert = true;
         }
       });
   }
@@ -50,12 +41,11 @@ export class NowPlayingMoviesComponent implements OnInit {
 
   nextPageClick = () => {
     this.next_prev = 1;
-    this.loading = true;
       this.getCollection(this.currentPage + 1);
   }
 
   prevPageClick() {
-    this.loading = true;
+    // this.loading = true;
       if (this.currentPage == 1) {
         this.getCollection(1);
       } else if (this.currentPage > 1) {
@@ -63,12 +53,8 @@ export class NowPlayingMoviesComponent implements OnInit {
         this.getCollection(this.currentPage - 1);
     }
   }
-  setFilteredItems() { }
-
 
   updateCurrentPage() {
-    this.data_found_alert = false;
-    this.loading = false;
     if (this.next_prev == 1) {
       this.currentPage += 1;
     } else if (this.next_prev == -1) {
@@ -79,8 +65,7 @@ export class NowPlayingMoviesComponent implements OnInit {
   }
 
   showDetails(item) {
-    this.appComponent.flag = 4;
-    console.log("aaaaaaa", item.id);
-    this.moviesService.current_movie_id = item.id;
+    this.moviesService.currMovieId = item.id;
+    this.appComponent.flag = 'movieDetails';
   }
 }

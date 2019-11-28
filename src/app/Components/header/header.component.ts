@@ -13,7 +13,6 @@ export class HeaderComponent {
     private appComponent: AppComponent,
   ) { }
   
-  //Home
   linkClick(link_name) {
       this.appComponent.flag = link_name;
   }

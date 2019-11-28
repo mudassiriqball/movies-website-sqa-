@@ -1,42 +1,11 @@
-<!-- End Search Bar -->
-
-
-<app-loading-list *ngIf="loading && !data_found_alert"></app-loading-list>
-<!-- NO Data Found Message -->
-<div *ngIf="data_found_alert" class="no_data_found">
-    <h3>Oops! No Data Found.</h3>
-    <p>There may be error with database.</p>
-    <p>Or check your internet connection.</p>
-</div>
-<!-- End NO Data Found Message -->
-<div *ngIf="!loading && !data_found_alert">
-    <mdb-card-title class="main_title">Movies</mdb-card-title>
-    <!-- Genres -->
-    <!-- <div class="row" style="padding-bottom: 100px;">
-        <div *ngFor="let item of collection" class="col-lg-3 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
-            <div class="g_card" (click)="getCollectionBygenre(item)">
-                <div class="box">
-                    <div class="g_percent">
-                        <svg class="g_svg">
-                            <circle cx="85" cy="85" r="85"></circle>
-                            <circle cx="85" cy="85" r="85"></circle>
-                        </svg>
-                        <div class="g_number">
-                            <h2>{{ item.name }}</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
+<div>
+    <mdb-card-title class="main_title">Movies Genres</mdb-card-title>
     <div class="row" style="padding-bottom: 100px;">
-        <div *ngFor="let item of collection" class="col-lg-2 col-md-3 col-sm-4 card_div">
+        <div *ngFor="let item of collection" class="col-lg-2 col-md-3 col-sm-4 card_div"
+            (click)="getMoviesByGenre(item)">
             <mdb-card>
                 <mdb-card-header>{{ item.name }} </mdb-card-header>
-                <!-- <mdb-card-title>{{ item.id }} </mdb-card-title> -->
             </mdb-card>
         </div>
     </div>
-
 </div>

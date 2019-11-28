@@ -78,9 +78,9 @@ export class PopularTvShowsComponent implements OnInit {
   }
 
   showDetails(item) {
-    this.appComponent.flag = 4;
-    console.log("aaaaaaa", item.id);
-    this.moviesService.current_movie_id = item.id;
+    // this.appComponent.flag = 4;
+    // console.log("aaaaaaa", item.id);
+    // this.moviesService.current_movie_id = item.id;
   }
 
 }

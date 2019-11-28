@@ -57,9 +57,8 @@ export class TvShowGenresComponent implements OnInit {
 
 
   showDetails(item) {
-    this.appComponent.flag = 4;
-    console.log("aaaaaaa", item.id);
-    this.moviesService.current_movie_id = item.id;
+    this.moviesService.currMovieId = item.id;
+    this.appComponent.flag = 'movieDetails';
   }
 
 }

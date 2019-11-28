@@ -1,3 +1,11 @@
+.main_title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 24px;
+  color: #3f729b;
+  padding: 5px 0px;
+}
 input.search {
   border: 1px solid #3f729b;
 }
@@ -6,33 +14,54 @@ input.search {
   background: #3f729b;
 }
 
-//no_data_found Styles
-.no_data_found {
-  margin: 15% 0px 15% 0px;
+.abc {
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.384);
+  color: black;
 }
 
-.no_data_found h3 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.abc label {
+  width: 100%;
+  text-align: center;
 }
 
-.no_data_found p {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0px;
-  margin: 0px;
+.abc .title {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.abc .release_date {
+  font-size: 16px;
+}
+
+mdb-card:hover {
+  .abc {
+    background: rgba(255, 255, 255, 0.726);
+    color: black;
+    .title {
+      font-size: 26px;
+      font-weight: bolder;
+    }
+    .release_date {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
 }
 
 // Movies List Styles
 mdb-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 5px;
   width: 100%;
 }
 
 .card_div {
-  padding: 0%;
+  padding: 1%;
   margin: 0%;
 }
 
@@ -40,167 +69,226 @@ mdb-card {
   padding: 0px 5px 0px 5px;
 }
 
-.textWrap {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  line-height: 16px;
-  max-height: 32px;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-}
+// <!-- Search Bar -->
+// <div *ngIf="!data_found_alert" class="input-group md-form form-sm form-2 pl-0">
+//     <input [(ngModel)]="searchTerm" class="form-control my-0 py-1 search" (change)="setFilteredItems()" type="text"
+//         placeholder="Search" aria-label="Search">
+//     <div class="input-group-append">
+//         <span class="input-group-text lighten-3" (click)="setFilteredItems()" id="basic-text1"><i
+//                 class="fas fa-search text-white" aria-hidden="true"></i></span>
+//     </div>
+// </div>
+// <!-- End Search Bar -->
 
-.title {
-  padding: 0;
-  margin: 0;
-  text-align: start;
-  font-weight: bolder;
-}
+// <app-loading-list *ngIf="loading && !data_found_alert"></app-loading-list>
+// <!-- NO Data Found Message -->
+// <div *ngIf="data_found_alert" class="no_data_found">
+//     <h3>Oops! No Data Found.</h3>
+//     <p>There may be error with database.</p>
+//     <p>Or check your internet connection.</p>
+// </div>
+// <!-- End NO Data Found Message -->
 
-.title {
-  padding: 10px 10px 0px 10px;
-}
+// <div *ngIf="!loading && !data_found_alert">
+//     <mdb-card-title class="main_title">Home</mdb-card-title>
+//     <!-- Pagination -->
+//     <nav aria-label="Page navigation">
+//         <ul class="pagination pagination-circle pg-blue justify-content-center">
+//             <li class="page-item">
+//                 <a (click)="onFirstPageClick()" class="page-link" mdbWavesEffect>First</a>
+//             </li>
+//             <li class="page-item">
+//                 <a (click)="prevPageClick()" class="page-link" aria-label="Previous" mdbWavesEffect>
+//                     <span aria-hidden="true">&laquo;</span>
+//                     <span class="sr-only">Previous</span>
+//                 </a>
+//             </li>
+//             <li class="page-item">
+//                 <a *ngIf="currentPage != 1" class="page-link" mdbWavesEffect>...</a>
+//             </li>
+//             <li class="page-item active">
+//                 <a class="page-link" mdbWavesEffect>{{ currentPage }}</a>
+//             </li>
+//             <li class="page-item">
+//                 <a class="page-link" mdbWavesEffect>...</a>
+//             </li>
+//             <li class="page-item">
+//                 <a (click)="nextPageClick()" class="page-link" aria-label="Next" mdbWavesEffect>
+//                     <span aria-hidden="true">&raquo;</span>
+//                     <span class="sr-only">Next</span>
+//                 </a>
+//             </li>
+//         </ul>
+//     </nav>
+//     <!-- End Pagination -->
 
-mdb-card-text {
-  padding: 0px 10px 0px 10px;
-}
+//     <!-- Movies List -->
+//     <div class="row" style="padding-bottom: 100px;">
+//         <div *ngFor="let item of collection" class="col-lg-2 col-md-3 col-sm-4 card_div d-flex align-items-stretch">
+//             <mdb-card (click)="showDetails(item)">
+//                 <mdb-card-img src="http://image.tmdb.org/t/p/w500{{item.poster_path}}" alt="abc "></mdb-card-img>
+//                 <mdb-card-body style="padding: 0%;margin: 0%; ">
+//                     <div class="containerr">
+//                         <div class="cardd">
+//                             <div class="box">
+//                                 <div class="percent">
+//                                     <!-- <svg [ngStyle]="'stroke-dashoffset': percent"> -->
+//                                     <svg>
+//                                         <circle cx="20" cy="20" r="20"></circle>
+//                                         <circle cx="20" cy="20" r="20"></circle>
+//                                     </svg>
+//                                     <div class="number">
+//                                         <h2>90<span>%</span></h2>
+//                                     </div>
+//                                 </div>
+//                                 <p class="textt">Rating</p>
+//                             </div>
+//                         </div>
+//                         <div class="cardd">
+//                             <div class="box">
+//                                 <div class="percent">
+//                                     <svg>
+//                                         <circle cx="20" cy="20" r="20"></circle>
+//                                         <circle cx="20" cy="20" r="20"></circle>
+//                                     </svg>
+//                                     <div class="number">
+//                                         <h2>90<span>%</span></h2>
+//                                     </div>
+//                                 </div>
+//                                 <p class="textt">Rating</p>
+//                             </div>
+//                         </div>
+//                         <div class="cardd">
+//                             <div class="box">
+//                                 <div class="percent">
+//                                     <svg>
+//                                         <circle cx="20" cy="20" r="20"></circle>
+//                                         <circle cx="20" cy="20" r="20"></circle>
+//                                     </svg>
+//                                     <div class="number">
+//                                         <h2>90<span>%</span></h2>
+//                                     </div>
+//                                 </div>
+//                                 <p class="textt">Rating</p>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </mdb-card-body>
+//                 <div class="title text-truncate ">{{ item.original_title }} </div>
+//                 <mdb-card-text class="align-text-bottom ">{{ item.release_date }} </mdb-card-text>
+//                 <div class="align-text-bottom textWrap ">{{ item.overview}}</div>
+//             </mdb-card>
+//         </div>
+//     </div>
+//     <!-- End Movies List -->
+// </div>
 
-.textWrap {
-  margin: 0px 10px 10px 10px;
-}
+// <!-- git remote add origin https://github.com/mudassiriqball/movies-website-sqa-.git -->
+// <!-- git push -u origin master -->
 
-.page-item:hover a {
-  background: #3f729b;
-  color: white;
-}
+// import { AppComponent } from './../../app.component';
+// import { MoviesService } from './../../Services/movies.service';
+// import { Component, OnInit } from '@angular/core';
 
-// Progress Bar
-// Progress Bar
-.containerr {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
+// @Component({
+//   selector: 'app-home',
+//   templateUrl: './home.component.html',
+//   styleUrls: ['./home.component.scss']
+// })
+// export class HomeComponent implements OnInit {
+//   searchTerm = "";
+//   // loading: boolean;
+//   collection: any;
+//   currentPage: any;
+//   next_prev: number;
+//   data_found_alert: boolean;
 
-.containerr .cardd {
-  position: relative;
-  width: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  border-radius: 4px;
-  text-align: center;
-  overflow: hidden;
-  transition: 0.5s;
-}
+//   constructor(
+//     private moviesService: MoviesService,
+//     private appComponent:AppComponent
+//     ) {
+//     this.currentPage = 1;
+//     this.data_found_alert = false;
+//     // this.loading = true;
+//   }
 
-.containerr .cardd:hover {
-  transform: translateY(-10px);
-}
+//   ngOnInit() {
+//     this.getCollection(1);
+//   }
 
-.containerr .cardd:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
+//   getCollection(page_No) {
+//       this.moviesService.getAllMovies(page_No).subscribe(
+//         res => {
+//         if (res.results !=  null || res.results != this.collection) {
+//           this.collection = res.results;
+//           this.updateCurrentPage();
+//         } else {
+//           this.data_found_alert = true;
+//         }
+//       });
+//   }
 
-.percent {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: transparent;
-  z-index: 1000;
-}
+//   onFirstPageClick() {
+//     this.next_prev = 0;
+//       this.getCollection(1);
+//   }
 
-.percent .number {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
+//   nextPageClick = () => {
+//     this.next_prev = 1;
+//       this.getCollection(this.currentPage + 1);
+//   }
 
-.percent .number h2 {
-  color: rgb(163, 161, 161);
-  margin-top: 5px;
-  font-size: 12px;
-  transition: 0.5s;
-}
+//   prevPageClick() {
+//     // this.loading = true;
+//       if (this.currentPage == 1) {
+//         this.getCollection(1);
+//       } else if (this.currentPage > 1) {
+//         this.next_prev = -1;
+//         this.getCollection(this.currentPage - 1);
+//     }
+//   }
+//   setFilteredItems() {
+//     this.moviesService.getMultiSearch(this.searchTerm, '1').subscribe(res => {
+//       if(res != null){
+//         console.log("ghuss gya:", this.searchTerm);
+//        this.collection = res.results;
+//       }
+//     });
+//   }
 
-.cardd:hover .percent .number h2 {
-  color: #000000;
-  font-size: 16px;
-}
+//   updateCurrentPage() {
+//     this.data_found_alert = false;
+//     // this.loading = false;
+//     if (this.next_prev == 1) {
+//       this.currentPage += 1;
+//     } else if (this.next_prev == -1) {
+//       this.currentPage -= 1;
+//     } else {
+//       this.currentPage = 1;
+//     }
+//   }
 
-.percent .number h2 span {
-  font-size: 8px;
-  color: rgb(163, 161, 161);
-  transition: 0.5s;
-}
+//   showDetails(item) {
+//     this.appComponent.flag = 4;
+//     console.log("aaaaaaa", item.id);
+//     this.moviesService.current_movie_id = item.id;
+//   }
+// }
 
-.cardd:hover .percent .number h2 span {
-  color: rgb(0, 0, 0);
-  font-size: 12px;
-}
-
-.textt {
-  position: relative;
-  color: #777;
-  font-size: 10px;
-  transition: 0.5s;
-  margin: 0px;
-}
-
-.cardd:hover .textt {
-  color: #000;
-  font-weight: bolder;
-}
-
-svg {
-  position: relative;
-  width: 50px;
-  height: 50px;
-  z-index: 1000;
-}
-
-svg circle {
-  width: auto;
-  height: auto;
-  fill: none;
-  stroke: rgb(238, 230, 230);
-  stroke-width: 3;
-  stroke-linecap: round;
-  transform: translate(5px, 5px);
-}
-
-svg circle:nth-child(2) {
-  stroke-dasharray: 440;
-  stroke-dashoffset: 440;
-}
-
-.cardd:nth-child(1) svg circle:nth-child(2) {
-  stroke-dashoffset: calc(440 - (123 * 40) / 100);
-  stroke: #2020db;
-}
-
-.cardd:nth-child(2) svg circle:nth-child(2) {
-  stroke-dashoffset: calc(440 - (123 * 60) / 100);
-  stroke: #b3d613;
-}
-
-.cardd:nth-child(3) svg circle:nth-child(2) {
-  stroke-dashoffset: calc(440 - (123 * 90) / 100);
-  stroke: #12aa6b;
-}
+//   // getCollectionBygenre(item,page) {
+//   //   this.genre_id = item;
+//   //   if (this.moviesService.current_list == 'moviesGenres') {
+//   //     this.moviesService.getMoviesByGenre_id(this.genre_id, page).subscribe(res => {
+//   //       if (res.results != null) {
+//   //         this.collection = res.results;
+//   //         this.updateCurrentPage();
+//   //       }
+//   //     });
+//   //   } else if (this.moviesService.current_list == 'tvsGenres') {
+//   //     this.moviesService.getTvShowsByGenre_id(item.id, page).subscribe(res => {
+//   //       if (res.results != null) {
+//   //         this.collection = res.results;
+//   //         this.updateCurrentPage();
+//   //       }
+//   //     });
+//   //   }

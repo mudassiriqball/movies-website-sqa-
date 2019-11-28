@@ -4,6 +4,10 @@
 <main>
     <app-main-home *ngIf="flag == 'MMovies'"></app-main-home>
     <div class="container-fluid">
+        <app-search *ngIf="flag == 'search'"></app-search>
+
+        <app-movies-by-genre *ngIf="flag == 'movieByGenre'"> </app-movies-by-genre>
+
         <app-home *ngIf="flag == 'home'"></app-home>
         <app-now-playing-movies *ngIf="flag == 'nowPlayingMovies'"></app-now-playing-movies>
         <app-popular-movies *ngIf="flag == 'popularMovies'"></app-popular-movies>
@@ -18,7 +22,7 @@
         <app-tv-airing-tv-shows *ngIf="flag == 'airingToday'"></app-tv-airing-tv-shows>
         <app-on-the-air-tv-shows *ngIf="flag == 'onTheAir'"></app-on-the-air-tv-shows>
 
-        <!-- <app-movie-details *ngIf="flag == 4"></app-movie-details> -->
+        <app-movie-details *ngIf="flag == 'movieDetails'"></app-movie-details>
     </div>
     <app-loading-list *ngIf="flag == 3"></app-loading-list>
 </main>

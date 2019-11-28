@@ -3,7 +3,7 @@
 
     <!-- Navbar brand -->
     <mdb-navbar-brand class="mmovie-link">
-        <a mdbWavesEffect (click)="linkClick('MMovies')" class="navbar-brand">MMovies</a>
+        <a mdbWavesEffect (click)="linkClick('MMovies')" class="navbar-brand">Movies Cinema</a>
     </mdb-navbar-brand>
 
     <!-- Collapsible content -->
@@ -16,16 +16,20 @@
             </li>
 
             <!-- Genres -->
-            <li class="nav-item dropdown spacer" dropdown>
+            <li class="nav-item spacer">
+                <a class="nav-link" mdbWavesEffect (click)="linkClick('movieGenres')">Genres<span
+                        class="sr-only">(current)</span></a>
+            </li>
+            <!-- <li class="nav-item dropdown spacer" dropdown>
                 <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light"
-                    mdbWavesEffect>Genres<span class="caret"></span></a>
+                    mdbWavesEffect (click)="linkClick('movieGenres')">Genres<span class=" caret"></span></a>
                 <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary move_orword" role="menu">
                     <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('movieGenres')">Movies
                         Genres </a>
                     <a class="dropdown-item waves-light" mdbWavesEffect (click)="linkClick('tvShowGenres')"> Tvs
                         Genres</a>
                 </div>
-            </li>
+            </li> -->
 
             <!-- Movies Dropdown -->
             <li class="nav-item dropdown spacer" dropdown>

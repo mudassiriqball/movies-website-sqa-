@@ -24,6 +24,8 @@ import { OnTheAirTvShowsComponent } from './Components/TvShows/on-the-air-tv-sho
 import { MovieGenresComponent } from './Components/Genres/movie-genres/movie-genres.component';
 import { TvShowGenresComponent } from './Components/Genres/tv-show-genres/tv-show-genres.component';
 import { HomeComponent } from './Components/home/home.component';
+import { SearchComponent } from './Components/main-home/search/search.component';
+import { MoviesByGenreComponent } from './Components/Genres/movies-by-genre/movies-by-genre.component';
 
 
 @NgModule({
@@ -45,6 +47,8 @@ import { HomeComponent } from './Components/home/home.component';
     MovieGenresComponent,
     TvShowGenresComponent,
     HomeComponent,
+    SearchComponent,
+    MoviesByGenreComponent,
   ],
   imports: [
     BrowserModule,

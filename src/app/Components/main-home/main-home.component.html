@@ -10,7 +10,7 @@
         <div class="carousel-caption">
             <div class="input-group md-form form-sm form-2 pl-0">
                 <input class="form-control my-0 py-1 search" [(ngModel)]="searchTerm" type="text"
-                    (click)="onSearchChange()" placeholder="Search" aria-label="Search">
+                    (change)="onSearchChange()" placeholder="Search" aria-label="Search">
                 <div class="input-group-append search">
                     <span class="input-group-text lighten-3" (click)="onSearchChange()" id="basic-text1"><i
                             class="fas fa-search text-grey" aria-hidden="true"></i></span>

@@ -1,13 +1,14 @@
-import { AppComponent } from './../../app.component';
-import { MoviesService } from './../../Services/movies.service';
+import { AppComponent } from 'src/app/app.component';
+import { MoviesService } from 'src/app/Services/movies.service';
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-search',
+  templateUrl: './search.component.html',
+  styleUrls: ['./search.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class SearchComponent implements OnInit {
   searchTerm = "";
   collection: any;
   currentPage: any;
@@ -25,7 +26,7 @@ export class HomeComponent implements OnInit {
   }
 
   getCollection(page_No) {
-      this.moviesService.getAllMovies(page_No).subscribe(
+      this.moviesService.getMovieByName(page_No).subscribe(
         res => {
         if (res.results !=  null) {
           this.collection = res.results;
@@ -52,13 +53,14 @@ export class HomeComponent implements OnInit {
         this.getCollection(this.currentPage - 1);
     }
   }
-  setFilteredItems() {
+  setFilteredItems(page_No) {
     this.currentPage = 1;
-    this.moviesService.getMultiSearch(this.searchTerm, '1').subscribe(res => {
+    this.moviesService.movieName = this.searchTerm;
+    this.moviesService.getMovieByName(page_No).subscribe(res => {
       if(res.results != null){
        this.collection = res.results; 
       }
-    }); 
+    });
   }
 
 
@@ -73,26 +75,7 @@ export class HomeComponent implements OnInit {
   }
 
   showDetails(item) {
-    console.log("id:",item.id)
     this.moviesService.currMovieId = item.id;
     this.appComponent.flag = 'movieDetails';
   }
 }
-
-  // getCollectionBygenre(item,page) {
-  //   this.genre_id = item;
-  //   if (this.moviesService.current_list == 'moviesGenres') {
-  //     this.moviesService.getMoviesByGenre_id(this.genre_id, page).subscribe(res => {
-  //       if (res.results != null) {
-  //         this.collection = res.results;
-  //         this.updateCurrentPage();
-  //       }
-  //     });
-  //   } else if (this.moviesService.current_list == 'tvsGenres') {
-  //     this.moviesService.getTvShowsByGenre_id(item.id, page).subscribe(res => {
-  //       if (res.results != null) {
-  //         this.collection = res.results;
-  //         this.updateCurrentPage();
-  //       }
-  //     });
-  //   }

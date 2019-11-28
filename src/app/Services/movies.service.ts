@@ -7,9 +7,14 @@ import { Http } from '@angular/http';
 })
 export class MoviesService {
 
+  movieName: any;
+  currGenreId: any;
+  currGenreName: any;
+  currMovieId: any;
+
   apiKey: string = 'b967380eb49988bdf23a3d5213aa7886';
+
   current_list: string;
-  current_movie_id: string;
 
   constructor(public http: Http) { }
 
@@ -18,12 +23,12 @@ export class MoviesService {
     return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=' + this.apiKey +
       '&certification_country=US&certification.lte=G&sort_by=popularity.desc&page=' + page).pipe(
         map(
-          res => res.json()
+          res =>  res.json()
         )
       );
   }
-  getMovieById(id) {
-    return this.http.get('https://api.themoviedb.org/3/movie/' + id + '?api_key=' + this.apiKey +
+  getMovieById() {
+    return this.http.get('https://api.themoviedb.org/3/movie/' + this.currMovieId + '?api_key=' + this.apiKey +
       '&language=en-US').pipe(
         map(
           res => res.json()
@@ -40,9 +45,9 @@ export class MoviesService {
       );
   }
 
-  getMovieByName(name: string, page:string) {
+  getMovieByName(page:string) {
     return this.http.get('https://api.themoviedb.org/3/search/movie?api_key=' + this.apiKey +
-      '&language=en-US&query=' + name + '&page=' + page + '&include_adult=false').pipe(
+      '&language=en-US&query=' + this.movieName + '&page=' + page + '&include_adult=false').pipe(
         map(
           res => res.json()
         )
@@ -58,9 +63,9 @@ export class MoviesService {
         )
       );
   }
-  getMoviesByGenre_id(genre_id: string, page: string) {
+  getMoviesByGenre_id(page: string) {
     return this.http.get('https://api.themoviedb.org/3/discover/movie?api_key=' + this.apiKey +
-      '&with_genres=' + genre_id + '&page=' + page).pipe(
+      '&with_genres=' + this.currGenreId + '&page=' + page).pipe(
         map(
           res => res.json()
         )
@@ -84,14 +89,14 @@ export class MoviesService {
   }
 
   // Movies
-  getLatestMovies(page: string) {
-    return this.http.get('https://api.themoviedb.org/3/movie/latest?api_key=' + this.apiKey +
-      '&language=en-US&page=' + page).pipe(
-        map(
-          res => res.json()
-        )
-      );
-  }
+  // getLatestMovies(page: string) {
+  //   return this.http.get('https://api.themoviedb.org/3/movie/latest?api_key=' + this.apiKey +
+  //     '&language=en-US&page=' + page).pipe(
+  //       map(
+  //         res => res.json()
+  //       )
+  //     );
+  // }
   getNowPlayingMovies(page: string) {
     return this.http.get('https://api.themoviedb.org/3/movie/now_playing?api_key=' + this.apiKey +
       '&language=en-US&page=' + page).pipe(

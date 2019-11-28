@@ -28,6 +28,7 @@ export class MainHomeComponent implements OnInit {
 
 
   onSearchChange(){
-    console.log("fuck you asshole", this.searchTerm);
+    this.moviesService.movieName = this.searchTerm;
+    this.appComponent.flag = 'search';
   }
 }

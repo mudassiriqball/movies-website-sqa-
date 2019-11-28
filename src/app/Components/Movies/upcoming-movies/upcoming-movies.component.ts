@@ -8,35 +8,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./upcoming-movies.component.scss']
 })
 export class UpcomingMoviesComponent implements OnInit {
-searchTerm = "";
-  loading: boolean;
-  collection: any;
+collection: any;
   currentPage: any;
   next_prev: number;
-  data_found_alert: boolean;
 
   constructor(
     private moviesService: MoviesService,
     private appComponent:AppComponent
     ) {
     this.currentPage = 1;
-    this.data_found_alert = false;
-    this.loading = true;
   }
   
-
   ngOnInit() {
     this.getCollection(1);
   }
 
   getCollection(page_No) {
-      this.moviesService.getUpcomingMovies(page_No).subscribe(res => {
+      this.moviesService.getUpcomingMovies(page_No).subscribe(
+        res => {
         if (res.results !=  null) {
           this.collection = res.results;
           this.updateCurrentPage();
-        } else {
-          this.loading = false;
-          this.data_found_alert = true;
         }
       });
   }
@@ -48,12 +40,11 @@ searchTerm = "";
 
   nextPageClick = () => {
     this.next_prev = 1;
-    this.loading = true;
       this.getCollection(this.currentPage + 1);
   }
 
   prevPageClick() {
-    this.loading = true;
+    // this.loading = true;
       if (this.currentPage == 1) {
         this.getCollection(1);
       } else if (this.currentPage > 1) {
@@ -61,12 +52,8 @@ searchTerm = "";
         this.getCollection(this.currentPage - 1);
     }
   }
-  setFilteredItems() { }
-
-
+  
   updateCurrentPage() {
-    this.data_found_alert = false;
-    this.loading = false;
     if (this.next_prev == 1) {
       this.currentPage += 1;
     } else if (this.next_prev == -1) {
@@ -77,9 +64,7 @@ searchTerm = "";
   }
 
   showDetails(item) {
-    this.appComponent.flag = 4;
-    console.log("aaaaaaa", item.id);
-    this.moviesService.current_movie_id = item.id;
+    this.moviesService.currMovieId = item.id;
+    this.appComponent.flag = 'movieDetails';
   }
-
 }
