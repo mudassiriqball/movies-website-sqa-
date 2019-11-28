@@ -9,7 +9,6 @@ import { MainHomeComponent } from './Components/main-home/main-home.component';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './Components/header/header.component';
-import { MoviesListComponent } from './Components/movies-list/movies-list.component';
 import { LoadingListComponent } from './Components/loading-list/loading-list.component';
 import { MovieDetailsComponent } from './Components/movie-details/movie-details.component';
 
@@ -24,6 +23,7 @@ import { TvAiringTvShowsComponent } from './Components/TvShows/tv-airing-tv-show
 import { OnTheAirTvShowsComponent } from './Components/TvShows/on-the-air-tv-shows/on-the-air-tv-shows.component';
 import { MovieGenresComponent } from './Components/Genres/movie-genres/movie-genres.component';
 import { TvShowGenresComponent } from './Components/Genres/tv-show-genres/tv-show-genres.component';
+import { HomeComponent } from './Components/home/home.component';
 
 
 @NgModule({
@@ -32,7 +32,6 @@ import { TvShowGenresComponent } from './Components/Genres/tv-show-genres/tv-sho
     FooterComponent,
     MainHomeComponent,
     HeaderComponent,
-    MoviesListComponent,
     LoadingListComponent,
     MovieDetailsComponent,
     NowPlayingMoviesComponent,
@@ -45,6 +44,7 @@ import { TvShowGenresComponent } from './Components/Genres/tv-show-genres/tv-sho
     OnTheAirTvShowsComponent,
     MovieGenresComponent,
     TvShowGenresComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

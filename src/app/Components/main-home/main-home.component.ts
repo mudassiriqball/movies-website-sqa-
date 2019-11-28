@@ -13,13 +13,10 @@ export class MainHomeComponent implements OnInit {
     private moviesService: MoviesService,
     private appComponent: AppComponent
   ) {
-    this.flag = null;
   }
+
+
   img_collection: any;
-  movie_collection: any;
-  tvShow_collection: any;
-  people_collection: any;
-  flag: string;
   searchTerm: string = "";
 
   ngOnInit() {
@@ -29,39 +26,8 @@ export class MainHomeComponent implements OnInit {
     });
   }
 
-  mmoviesClick() {
-    this.appComponent.flag = 1;
-  }
 
-  onSearchAll() {
-    // this.moviesService.getMultiSearch(this.searchTerm, '1').subscribe(res => {
-    //   this.collection = res.results;
-    // });
+  onSearchChange(){
+    console.log("fuck you asshole", this.searchTerm);
   }
-  onSearchMovies() {
-    this.moviesService.getMovieByName(this.searchTerm, '1').subscribe(res => {
-      this.movie_collection = res.results;   
-      console.log("Darya Khan");
-      this.flag = 'show_movies';
-    });
-   }
-  onSearchTvs() { 
-    this.moviesService.getTvShowsByName(this.searchTerm, '1').subscribe(res => {
-      this.tvShow_collection = res.results;
-      this.flag = 'show_tvShows';
-    });
-  }
-  onSearchPeople() { 
-    this.moviesService.getPeopleByName(this.searchTerm, '1').subscribe(res => {
-      this.people_collection = res.results;
-      this.flag = 'show_people';
-    });
-  }
-
-
-  showDetails(item) {
-    this.appComponent.flag = 4;
-    this.moviesService.current_movie_id = item.id;
-  }
-
 }

@@ -4,8 +4,7 @@
 <main>
     <app-main-home *ngIf="flag == 'MMovies'"></app-main-home>
     <div class="container-fluid">
-        <!-- <app-movies-list *ngIf="flag == 'home'"></app-movies-list> -->
-        <!-- <app-home *ngIf="flag == 'home'"></app-home> -->
+        <app-home *ngIf="flag == 'home'"></app-home>
         <app-now-playing-movies *ngIf="flag == 'nowPlayingMovies'"></app-now-playing-movies>
         <app-popular-movies *ngIf="flag == 'popularMovies'"></app-popular-movies>
         <app-top-rated-movies *ngIf="flag == 'topRatedMovies'"></app-top-rated-movies>

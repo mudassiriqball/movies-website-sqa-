@@ -185,6 +185,7 @@ export class MoviesService {
         )
       );
   }
+  
   getPopularPeople(page: string) {
     return this.http.get('https://api.themoviedb.org/3/person/popular?api_key=' + this.apiKey +
       '&language=en-US&page=' + page).pipe(
@@ -213,6 +214,7 @@ export class MoviesService {
         )
       );
   }
+
   getDiscoverTVShows(page: string) {
     return this.http.get('https://api.themoviedb.org/3/discover/tv?api_key=' + this.apiKey +
       '&language=en-US&sort_by=popularity.desc&page=1&timezone=America%2FNew_York&include_null_first_air_dates=false&page=' + page).pipe(
@@ -231,12 +233,9 @@ export class MoviesService {
     );
   }
 
-
-
-
   // Multi Search
   getMultiSearch(media_querry: string, page: string) {
-    return this.http.get('https://api.themoviedb.org/3/search/multi?api_key=' + this.apiKey + '&language=en-US&query=' + media_querry + '&page=1' + page + '&include_adult=false').pipe(
+    return this.http.get('https://api.themoviedb.org/3/search/multi?api_key=' + this.apiKey + '&language=en-US&query=' + media_querry + '&page=' + page + '&include_adult=false').pipe(
       map(
         res => res.json()
       )
