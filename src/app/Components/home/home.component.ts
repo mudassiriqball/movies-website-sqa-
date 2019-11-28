@@ -52,13 +52,14 @@ export class HomeComponent implements OnInit {
         this.getCollection(this.currentPage - 1);
     }
   }
-  setFilteredItems() {
+  setFilteredItems(page_No) {
     this.currentPage = 1;
-    this.moviesService.getMultiSearch(this.searchTerm, '1').subscribe(res => {
+    this.moviesService.movieName = this.searchTerm;
+    this.moviesService.getMovieByName(page_No).subscribe(res => {
       if(res.results != null){
        this.collection = res.results; 
       }
-    }); 
+    });
   }
 
 
